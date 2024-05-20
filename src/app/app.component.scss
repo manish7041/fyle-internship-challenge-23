@@ -1,0 +1,49 @@
+
+.btn1 {
+  background-color: rgb(95, 182, 240);
+  color: #fff;
+  text-decoration: none;
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 8px;
+}
+.btn1:hover {
+  background-color: rgb(54, 146, 207);
+
+  transition: 0.6s ease-in;
+}
+
+
+
+
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+.blocks, .btn2{
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #DDDDDD;
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(39, 172, 230);
+}
+
+
+.blocks:first-child{
+  border-radius: 6px 0 0 6px;
+}
+.blocks:last-child{
+  border-radius: 0 6px 6px 0;
+}
+.blocks:hover{
+  background-color: #59c0fb;
+  color: white;
+}
+.active{
+  background-color: #49b5eb;
+  color: white;
+}
+
