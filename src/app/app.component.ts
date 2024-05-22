@@ -9,13 +9,13 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor() {}
-  private apiService: ApiService = inject(ApiService);
-
+  constructor(private apiService:ApiService) {}
+  // private apiService: ApiService = inject(ApiService);
+title:string = 'fyle-internship-challenge-23'
   pageSizeOptions: number[] = [10, 20, 50, 100];
 
   userName: string = '';
-  user: string;
+  error: string;
   userInfo: any;
   userRepo: any;
   topic: any[] = [];
@@ -81,15 +81,19 @@ export class AppComponent implements OnInit {
         },
         error: (err) => {
           console.log(err.status);
-          if (err.status) {
-            this.user = this.userName;
+          if (err.status == 404) {
+            this.error =`No user with UserName ${this.userName}` ;
             this.condition = true;
             console.log(this.condition);
+          }if(err.status == 403){
+         this.error = `Api request limit end Please Use a Git access Token in order to get data`;
+         this.condition = true;
           }
         },
       });
     }
   }
+
 
  //get next repo according to page size
   getNextRepoList(pageNumber: number) {

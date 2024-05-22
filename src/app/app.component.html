@@ -1,15 +1,19 @@
 
-<div class="mainContainer relative w-lhv h-screen  overflow-hidden flex flex-col">
-
+<div class=" mainContainer relative w-lhv h-screen  overflow-hidden flex flex-col">
+  <div class="content border border-2 rounded-lg border-pink-200 relative flex  self-start  justify-selft-start items-start justify-self-center w-fit p-2 left-3">
+      <span class="">fyle-frontend-challenge app is running!</span>
+  
+    </div>
 <!-- Search -->
   <div class="searchContainer fixed top-0 left-0 flex flex-row justify-center lg:justify-end items-center  gap-2 w-full  p-2 h-fit">
+  
     <div class="flex flex-row justify-center items-center gap-2 z-100">
       <label for="page-size">Repo Size:</label>
-      <select id="page-size" [(ngModel)]="pageSize" class="border border-2 border-sky-500 px-5 py-2 rounded-lg">
+      <select  [(ngModel)]="pageSize"  id="page-size"class=" border border-2 border-sky-500 px-5 py-2 rounded-lg">
         <option *ngFor="let option of pageSizeOptions" [value]="option">{{ option }}</option>
       </select>
       </div>
-    <input class="searchInput  border-solid border-2 border-sky-500 outline-0 w-half  p-2 rounded-lg" type="text"
+    <input class=" searchInput  border-solid border-2 border-sky-500 outline-0 w-half  p-2 rounded-lg" type="text"
       placeholder="Eneter Username" [(ngModel)]="userName">
     <button class="btn1" (click)="getGitUser()">Search</button>
   </div>
@@ -98,6 +102,6 @@
 
   <!-- UserNotFound -->
   <div  *ngIf="condition && userName != ''" class="userInfoContainer relative top-10 flex flex-col justify-center items-center w-full h-full overflow-hidden px-3 py-5 z-50">
- <p class="text-2xl">Opps No user found with Username: <span class="text-3xl text-sky-500">{{user}}</span></p>
+ <p class="text-2xl">Opps: <span class="text-3xl text-sky-500">{{error}}</span></p>
   </div>
 </div>
